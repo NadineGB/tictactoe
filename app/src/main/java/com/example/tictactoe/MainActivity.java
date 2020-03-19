@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void dropIn(View view) {
@@ -42,6 +42,22 @@ public class MainActivity extends AppCompatActivity {
 
         counter.animate().translationYBy(1500).rotation(10 * 360).setDuration(500);
 
+        for (int[] winningPosition : winningPositions) {
+
+            if (gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[1]] == gameState[winningPosition[2]] && gameState[winningPosition[0]] != 2) {
+
+                String winner = "";
+
+                if (activePlayer == 1) {
+                    winner = "X";
+                } else if (activePlayer == 0) {
+                    winner = "Sun";
+                }
+
+                Toast.makeText(this, winner + " hat gewonnen", Toast.LENGTH_LONG).show();
+            }
+
+        }
 
 
 
