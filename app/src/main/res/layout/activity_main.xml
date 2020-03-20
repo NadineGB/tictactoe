@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/winnerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -23,19 +23,23 @@
             android:gravity="center_horizontal"
             android:text="Unentschieden!"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="invisible" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/playAgainButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20sp"
-            android:text="Play again!" />
+            android:onClick="playAgain"
+            android:text="Play again!"
+            android:visibility="invisible" />
 
         <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginLeft="30dp"
